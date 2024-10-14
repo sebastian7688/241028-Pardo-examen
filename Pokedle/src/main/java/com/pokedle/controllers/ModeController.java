@@ -10,8 +10,12 @@ import org.springframework.web.bind.annotation.RestController;
 import com.pokedle.services.UserRepository;
 
 @RestController
+@RequestMapping("/module")
 public class ModeController {
 	
 	@Autowired
 	private UserRepository users;
+	
+	@GetMapping("/register")
+	private String showRegister()
 }
