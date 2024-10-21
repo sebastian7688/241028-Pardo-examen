@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.pokedle.main;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;

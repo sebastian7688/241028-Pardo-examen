@@ -1,4 +1,4 @@
-package com.pokedle.models;
+package com.pokedle.main.models;
 
 import jakarta.persistence.*;
 
