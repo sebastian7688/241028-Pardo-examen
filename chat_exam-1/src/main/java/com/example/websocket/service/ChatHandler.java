@@ -46,13 +46,6 @@ public class ChatHandler extends TextWebSocketHandler {
 			}
 		}
 	}
-	public void broadCastMessage(TextMessage message)throws Exception {
-		for(WebSocketSession s:sessions) {
-			if(s.isOpen()) {
-				s.sendMessage(message);
-			}
-		}
-	}
 
 
 }
