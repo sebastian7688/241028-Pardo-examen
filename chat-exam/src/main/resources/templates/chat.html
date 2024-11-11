@@ -6,10 +6,10 @@
 </head>
 <body>
 <div id="messageArea"></div>
-   <label>Nombre de usuario:</label>
-   <input type="text"  id="username" placeholder="Introduce tu nombre">			
-   <label>Mensaje:</label>
-   <input type="text"  id="messageInput" placeholder="Introduce tu mensaje">
+   <label>Email:</label>
+   <input type="text"  id="email" placeholder="Introduce tu nombre">			
+   <label>clave:</label>
+   <input type="text"  id="clave" placeholder="Introduce tu mensaje">
    <button onclick="sendMessage()">enviar</button>
 <script th:inline="javascript">
 	let socket = new WebSocket("ws://localhost:8080/chat")
@@ -17,12 +17,16 @@
         let messageArea = document.getElementById("messageArea");
         messageArea.innerHTML += '<p>' + event.data + '</p>';
     };
-
     function sendMessage() {
-        let username = document.getElementById("username").value;
-        let messageInput = document.getElementById("messageInput").value;
-        
-        let fullMessage = username + ": " + messageInput;
+        let username = document.getElementById("email").value;
+        let messageInput = document.getElementById("clave").value;
+        let fullMessage = username + "Se conecto" ;
+        let clave = "123ABC"
+        if(messageInput==clave){
+            socket.send( username +"se conecto CORRECTAMENTE");
+        }else{
+            socket.send( username +"se conecto INCORRECTAMENTE");
+        }
         socket.send(fullMessage);
         messageInput.value = '';
     }

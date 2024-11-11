@@ -11,14 +11,14 @@ import com.example.demo.service.ChatHandler;
 
 @Configuration
 @EnableWebSocket
-public class WebSocketConfig implements WebSocketConfigurer {
+public class WebSocketConfig implements WebSocketConfigurer{
 
 	@Autowired
 	private ChatHandler chatHandler;
-
 	@Override
 	public void registerWebSocketHandlers(WebSocketHandlerRegistry registry) {
 		registry.addHandler(chatHandler, "/chat");
 	}
+	
 
 }
